@@ -1,18 +1,18 @@
 class TasksController < ApplicationController
   def index
-      @tasks = task.all
+      @tasks = Task.all
   end
 
   def show
-      @task = task.find(params[:id])
+      @task = Task.find(params[:id])
   end
 
   def new
-      @task = task.new
+      @task = Task.new
   end
 
   def create
-      @task = task.new(task_params)
+      @task = Task.new(task_params)
 
     if @task.save
       flash[:success] = 'task が正常に投稿されました'
